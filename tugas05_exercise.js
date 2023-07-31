@@ -31,12 +31,13 @@ function getMinMaxAvgWithoutSort(arr) {
     };
   }
   
-  // Contoh penggunaan:
+  // fungsi:
   const numbers = [4, 2, 8, 1, 6];
   const result = getMinMaxAvgWithoutSort(numbers);
-  console.log(result); // Output: { min: 1, max: 8, avg: 4.2 }
+  console.log(result);
 
 console.log(`=========================`)
+
 console.log(`No.02`)
 function gabungKata(arr) {
   if (arr.length === 0) {
@@ -56,11 +57,13 @@ function gabungKata(arr) {
   }
 }
 
-// Contoh fungsi:
+// fungsi:
 const kataArr = ["gelas", "piring", "sendok", "garpu"];
 const hasilGabung = gabungKata(kataArr);
 console.log(hasilGabung);
+
 console.log(`=========================`)
+
 console.log(`No.03`)
 function splitStringIntoArray(stringToSplit) {
   // Memisahkan string menjadi array menggunakan spasi sebagai pemisah
@@ -69,12 +72,14 @@ function splitStringIntoArray(stringToSplit) {
   return arrayOfWords;
 }
 
-// Contoh penggunaan fungsi
+// fungsi
 const inputString = "Halo Dunia Apakah Sudah Minum Yakult Hari Ini";
 const resultArray = splitStringIntoArray(inputString);
 
 console.log(resultArray);
+
 console.log(`=========================`)
+
 console.log(`No.04`)
 function hitungElemenSama(arr1, arr2) {
   // Pastikan kedua larik memiliki panjang yang sama
@@ -93,12 +98,14 @@ function hitungElemenSama(arr1, arr2) {
   return hasil;
 }
 
-// Contoh penggunaan fungsi
+// fungsi
 const larik1 = [1, 2, 3, 4];
 const larik2 = [5, 6, 7, 8];
 const hasilPerhitungan = hitungElemenSama(larik1, larik2);
 console.log(hasilPerhitungan); 
+
 console.log(`=========================`)
+
 console.log(`No.05`)
 function tambahkanElemenUnik(arr, elemen) {
   if (!arr.includes(elemen)) {
@@ -106,7 +113,7 @@ function tambahkanElemenUnik(arr, elemen) {
   }
 }
 
-// Contoh penggunaan:
+// fungsi:
 let arraySaya = [1, 2, 3, 4];
 console.log("Array awal:", arraySaya);
 
@@ -115,7 +122,9 @@ console.log("Setelah menambahkan elemen 3:", arraySaya);
 
 tambahkanElemenUnik(arraySaya, 5);
 console.log("Setelah menambahkan elemen 5:", arraySaya);
+
 console.log(`=========================`)
+
 console.log(`No.06`)
 function hapusAngkaGanjil(array) {
   const arrayBaru = array.filter(angka => angka % 2 === 0);
