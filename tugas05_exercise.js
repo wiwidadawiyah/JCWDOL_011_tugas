@@ -1,5 +1,5 @@
 console.log(`No.01`)
-// Fungsi untuk mendapatkan nilai terendah, tertinggi, dan rata-rata tanpa menggunakan fungsi sortir
+// mencari nilai terendah, tertinggi, dan rata-rata
 function getMinMaxAvgWithoutSort(arr) {
     if (arr.length === 0) {
       return {
@@ -47,10 +47,10 @@ function gabungKata(arr) {
   } else if (arr.length === 2) {
     return arr.join(' dan ');
   } else {
-    // Menggabungkan kata-kata dalam larik, dipisahkan dengan koma
+    // Menggabungkan kata dipisahkan dengan koma
     let result = arr.slice(0, arr.length - 1).join(', ');
 
-    // Menambahkan kata terakhir dengan 'dan' di depannya
+    // Menambahkan 'dan'
     result += ` dan ${arr[arr.length - 1]}`;
 
     return result;
