@@ -4,37 +4,45 @@ class Karyawan {
         this.jenis = jenis;
         this.jamKerjaPerHari = 0;
     }
-    
 
     tambahJamKerja(jam) {
         this.jamKerjaPerHari += jam;
     }
 
     hitungTotalGaji() {
-        let gaji;
-        if (this.jenis === "full_time") {
-            gaji = this.jamKerjaPerHari > 6 ? 75000 : 100000;
-        } else if (this.jenis === "half_time") {
-            gaji = this.jamKerjaPerHari > 6 ? 30000 : 50000;
+        let gajiPerJamAwal, gajiPerJamSelanjutnya;
+        
+        if (this.jenis === 'full_time') {
+            gajiPerJamAwal = 100000;
+            gajiPerJamSelanjutnya = 75000;
+        } else if (this.jenis === 'part_time') {
+            gajiPerJamAwal = 50000;
+            gajiPerJamSelanjutnya = 30000;
         } else {
-            throw new Error ("Jenis karyawan tidak valid");
+            throw new Error('Jenis karyawan tidak valid');
         }
-        return this.jamKerjaPerHari * gaji;
+
+        const jamAwal = Math.min(this.jamKerjaPerHari, 6);
+        const jamSelanjutnya = Math.max(this.jamKerjaPerHari - 6, 0);
+
+        const totalGaji = (jamAwal * gajiPerJamAwal) + (jamSelanjutnya * gajiPerJamSelanjutnya);
+        return totalGaji;
     }
 }
 
-class FullTime extends Karyawan {
+class FullTimer extends Karyawan {
     constructor(nama) {
-        super(nama, "full_time");
+        super(nama, 'full_time');
     }
 }
 
-class HalfTime extends Karyawan {
+class PartTimer extends Karyawan {
     constructor(nama) {
-        super(nama, "half_time");
+        super(nama, 'part_time');
     }
 }
 
-const fullTime = new FullTime("Adawiyah");
-fullTime.tambahJamKerja(8);
-console.log(`${fullTime.nama} memiliki total gaji : Rp ${fullTime.hitungTotalGaji()}`);
+// =========TESTER=========
+const karyawanFullTimer = new FullTimer('Adawiyah');
+karyawanFullTimer.tambahJamKerja(8);
+console.log(`${karyawanFullTimer.nama} memiliki total gaji: Rp ${karyawanFullTimer.hitungTotalGaji()}`);
